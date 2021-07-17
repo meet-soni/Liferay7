@@ -1,4 +1,0 @@
-Bundle-Name: sample-crud
-Bundle-SymbolicName: com.ecw.crud
-Bundle-Version: 1.0.0
-Export-Package: com.ecw.crud.constants
