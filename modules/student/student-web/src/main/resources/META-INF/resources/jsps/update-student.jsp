@@ -26,4 +26,3 @@ String div = request.getParameter("div");
 	</aui:input>
 	<aui:button type="submit" value ="Update Student" name=""></aui:button>
 </aui:form>
-	
