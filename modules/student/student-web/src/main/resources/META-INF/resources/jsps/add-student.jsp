@@ -17,5 +17,3 @@
 	</aui:input>
 	<aui:button type="submit" value ="Add Student" name=""></aui:button>
 </aui:form>
-
-	
