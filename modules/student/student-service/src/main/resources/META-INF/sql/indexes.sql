@@ -1,0 +1,1 @@
+create index IX_2DB85478 on Student (Std, Divison[$COLUMN_LENGTH:75$]);

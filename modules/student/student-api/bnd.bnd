@@ -1,0 +1,9 @@
+Bundle-Name: student-api
+Bundle-SymbolicName: com.ecw.student.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ecw.student.exception,\
+	com.ecw.student.model,\
+	com.ecw.student.service,\
+	com.ecw.student.service.persistence
+-includeresource: META-INF/service.xml=../student-service/service.xml

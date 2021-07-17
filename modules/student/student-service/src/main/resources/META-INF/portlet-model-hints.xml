@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ecw.student.model.Student">
+		<field name="Id" type="long" />
+		<field name="Name" type="String" />
+		<field name="Address" type="String" />
+		<field name="Std" type="int" />
+		<field name="Divison" type="String" />
+	</model>
+</model-hints>
