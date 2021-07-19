@@ -61,6 +61,7 @@ public class StudentWrapper implements Student, ModelWrapper<Student> {
 		attributes.put("Address", getAddress());
 		attributes.put("Std", getStd());
 		attributes.put("Divison", getDivison());
+		attributes.put("PhoneNo", getPhoneNo());
 
 		return attributes;
 	}
@@ -95,6 +96,12 @@ public class StudentWrapper implements Student, ModelWrapper<Student> {
 
 		if (Divison != null) {
 			setDivison(Divison);
+		}
+
+		Long PhoneNo = (Long)attributes.get("PhoneNo");
+
+		if (PhoneNo != null) {
+			setPhoneNo(PhoneNo);
 		}
 	}
 
@@ -151,6 +158,16 @@ public class StudentWrapper implements Student, ModelWrapper<Student> {
 	@Override
 	public String getName() {
 		return _student.getName();
+	}
+
+	/**
+	* Returns the phone no of this student.
+	*
+	* @return the phone no of this student
+	*/
+	@Override
+	public long getPhoneNo() {
+		return _student.getPhoneNo();
 	}
 
 	/**
@@ -267,6 +284,16 @@ public class StudentWrapper implements Student, ModelWrapper<Student> {
 	@Override
 	public void setNew(boolean n) {
 		_student.setNew(n);
+	}
+
+	/**
+	* Sets the phone no of this student.
+	*
+	* @param PhoneNo the phone no of this student
+	*/
+	@Override
+	public void setPhoneNo(long PhoneNo) {
+		_student.setPhoneNo(PhoneNo);
 	}
 
 	/**

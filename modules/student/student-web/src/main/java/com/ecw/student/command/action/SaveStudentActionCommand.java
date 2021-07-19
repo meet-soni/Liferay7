@@ -31,6 +31,7 @@ public class SaveStudentActionCommand extends BaseMVCActionCommand{
 		String address = ParamUtil.getString(actionRequest, "address");
 		int std = ParamUtil.getInteger(actionRequest, "std");
 		String div = ParamUtil.getString(actionRequest, "div");
+		long phoneNo = ParamUtil.getLong(actionRequest, "phoneNo");
 		
 
 		long studentId = counterLocalService.increment(Student.class.getName());
@@ -39,6 +40,7 @@ public class SaveStudentActionCommand extends BaseMVCActionCommand{
 		student.setAddress(address);
 		student.setStd(std);
 		student.setDivison(div);
+		student.setPhoneNo(phoneNo);
 		studentLocalService.addStudent(student);
 		hideDefaultSuccessMessage(actionRequest);
 		actionResponse.setRenderParameter("mvcRenderCommandName", "viewStudents");

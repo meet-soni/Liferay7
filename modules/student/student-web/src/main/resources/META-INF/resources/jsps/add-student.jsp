@@ -15,5 +15,8 @@
 	<aui:input type="text" name ="div">
 		<aui:validator name="required" ></aui:validator>
 	</aui:input>
+	<aui:input type="text" name ="phoneNo">
+		<aui:validator name="required" ></aui:validator>
+	</aui:input>
 	<aui:button type="submit" value ="Add Student" name=""></aui:button>
 </aui:form>

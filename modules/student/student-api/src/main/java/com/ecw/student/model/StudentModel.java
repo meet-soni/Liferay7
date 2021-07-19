@@ -133,6 +133,20 @@ public interface StudentModel extends BaseModel<Student> {
 	 */
 	public void setDivison(String Divison);
 
+	/**
+	 * Returns the phone no of this student.
+	 *
+	 * @return the phone no of this student
+	 */
+	public long getPhoneNo();
+
+	/**
+	 * Sets the phone no of this student.
+	 *
+	 * @param PhoneNo the phone no of this student
+	 */
+	public void setPhoneNo(long PhoneNo);
+
 	@Override
 	public boolean isNew();
 

@@ -6,6 +6,7 @@ String name = request.getParameter("name");
 String address = request.getParameter("address");
 String std = request.getParameter("std");
 String div = request.getParameter("div");
+String phoneNo = request.getParameter("phoneNo");
 %>
 
 <portlet:actionURL name="updateStudent" var="updateStudentURL" />
@@ -22,6 +23,9 @@ String div = request.getParameter("div");
 		<aui:validator name="required" ></aui:validator>
 	</aui:input>
 	<aui:input type="text" name ="div" value="<%=div %>">
+		<aui:validator name="required" ></aui:validator>
+	</aui:input>
+	<aui:input type="text" name ="phoneNo" value ="<%=phoneNo %>">
 		<aui:validator name="required" ></aui:validator>
 	</aui:input>
 	<aui:button type="submit" value ="Update Student" name=""></aui:button>

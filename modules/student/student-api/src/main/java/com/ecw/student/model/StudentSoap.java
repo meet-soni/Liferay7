@@ -38,6 +38,7 @@ public class StudentSoap implements Serializable {
 		soapModel.setAddress(model.getAddress());
 		soapModel.setStd(model.getStd());
 		soapModel.setDivison(model.getDivison());
+		soapModel.setPhoneNo(model.getPhoneNo());
 
 		return soapModel;
 	}
@@ -130,9 +131,18 @@ public class StudentSoap implements Serializable {
 		_Divison = Divison;
 	}
 
+	public long getPhoneNo() {
+		return _PhoneNo;
+	}
+
+	public void setPhoneNo(long PhoneNo) {
+		_PhoneNo = PhoneNo;
+	}
+
 	private long _Id;
 	private String _Name;
 	private String _Address;
 	private int _Std;
 	private String _Divison;
+	private long _PhoneNo;
 }

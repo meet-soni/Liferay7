@@ -32,6 +32,7 @@ public class UpdateStudentMVCActionCommand extends BaseMVCActionCommand{
 		String address = ParamUtil.getString(actionRequest, "address");
 		int std = ParamUtil.getInteger(actionRequest, "std");
 		String div = ParamUtil.getString(actionRequest, "div");
+		long phoneNo = ParamUtil.getLong(actionRequest, "phoneNo");
 		
 		Student student = studentLocalService.fetchStudent(studentId);
 		if(Validator.isNotNull(student)) {
@@ -39,8 +40,11 @@ public class UpdateStudentMVCActionCommand extends BaseMVCActionCommand{
 			student.setAddress(address);
 			student.setStd(std);
 			student.setDivison(div);
+			student.setPhoneNo(phoneNo);
 			studentLocalService.updateStudent(student);
 		}
+		
+		hideDefaultSuccessMessage(actionRequest);
 		
 		actionResponse.setRenderParameter("MVCRenderCommandName", "viewStudents");
 	}
