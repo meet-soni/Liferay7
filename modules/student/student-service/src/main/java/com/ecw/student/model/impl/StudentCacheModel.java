@@ -62,7 +62,7 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(11);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("{Id=");
 		sb.append(Id);
@@ -74,6 +74,8 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 		sb.append(Std);
 		sb.append(", Divison=");
 		sb.append(Divison);
+		sb.append(", PhoneNo=");
+		sb.append(PhoneNo);
 		sb.append("}");
 
 		return sb.toString();
@@ -108,6 +110,8 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 			studentImpl.setDivison(Divison);
 		}
 
+		studentImpl.setPhoneNo(PhoneNo);
+
 		studentImpl.resetOriginalValues();
 
 		return studentImpl;
@@ -121,6 +125,8 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 
 		Std = objectInput.readInt();
 		Divison = objectInput.readUTF();
+
+		PhoneNo = objectInput.readLong();
 	}
 
 	@Override
@@ -150,6 +156,8 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 		else {
 			objectOutput.writeUTF(Divison);
 		}
+
+		objectOutput.writeLong(PhoneNo);
 	}
 
 	public long Id;
@@ -157,4 +165,5 @@ public class StudentCacheModel implements CacheModel<Student>, Externalizable {
 	public String Address;
 	public int Std;
 	public String Divison;
+	public long PhoneNo;
 }

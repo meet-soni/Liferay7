@@ -13,8 +13,9 @@
 		<tr>
 			<th>Student Id</th>
 			<th>Name </th>
-			<th>Address</th>
+			<th>Address</th>			
 			<th>Std - div </th>
+			<th>Phone No</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -32,12 +33,14 @@
 			<portlet:param name="address" value ="${student.getAddress() }" />
 			<portlet:param name="std" value ="${student.getStd() }" />
 			<portlet:param name="div" value ="${student.getDivison() }" />
+			<portlet:param name="phoneNo" value ="${student.getPhoneNo() }" />
 		</portlet:renderURL>
 			<tr>
 				<th>${student.getId() }</th>
 				<th>${student.getName() }</th>
 				<th>${student.getAddress() }</th>
 				<th>${student.getStd() } - ${student.getDivison()}</th>
+				<th>${student.getPhoneNo() }</th>
 				<th>
 					<a href="<%=updateStudentURL%>" 
 	                    class="btn  btn-primary btn-default btn-sm px-2 py-1"> 

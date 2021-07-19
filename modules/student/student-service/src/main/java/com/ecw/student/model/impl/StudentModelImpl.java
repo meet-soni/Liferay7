@@ -70,7 +70,8 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 			{ "Name", Types.VARCHAR },
 			{ "Address", Types.VARCHAR },
 			{ "Std", Types.INTEGER },
-			{ "Divison", Types.VARCHAR }
+			{ "Divison", Types.VARCHAR },
+			{ "PhoneNo", Types.BIGINT }
 		};
 	public static final Map<String, Integer> TABLE_COLUMNS_MAP = new HashMap<String, Integer>();
 
@@ -80,9 +81,10 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		TABLE_COLUMNS_MAP.put("Address", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("Std", Types.INTEGER);
 		TABLE_COLUMNS_MAP.put("Divison", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("PhoneNo", Types.BIGINT);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table Student (Id LONG not null primary key,Name VARCHAR(75) null,Address VARCHAR(75) null,Std INTEGER,Divison VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table Student (Id LONG not null primary key,Name VARCHAR(75) null,Address VARCHAR(75) null,Std INTEGER,Divison VARCHAR(75) null,PhoneNo LONG)";
 	public static final String TABLE_SQL_DROP = "drop table Student";
 	public static final String ORDER_BY_JPQL = " ORDER BY student.Id ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY Student.Id ASC";
@@ -120,6 +122,7 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		model.setAddress(soapModel.getAddress());
 		model.setStd(soapModel.getStd());
 		model.setDivison(soapModel.getDivison());
+		model.setPhoneNo(soapModel.getPhoneNo());
 
 		return model;
 	}
@@ -189,6 +192,7 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		attributes.put("Address", getAddress());
 		attributes.put("Std", getStd());
 		attributes.put("Divison", getDivison());
+		attributes.put("PhoneNo", getPhoneNo());
 
 		attributes.put("entityCacheEnabled", isEntityCacheEnabled());
 		attributes.put("finderCacheEnabled", isFinderCacheEnabled());
@@ -226,6 +230,12 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 
 		if (Divison != null) {
 			setDivison(Divison);
+		}
+
+		Long PhoneNo = (Long)attributes.get("PhoneNo");
+
+		if (PhoneNo != null) {
+			setPhoneNo(PhoneNo);
 		}
 	}
 
@@ -321,6 +331,17 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		return GetterUtil.getString(_originalDivison);
 	}
 
+	@JSON
+	@Override
+	public long getPhoneNo() {
+		return _PhoneNo;
+	}
+
+	@Override
+	public void setPhoneNo(long PhoneNo) {
+		_PhoneNo = PhoneNo;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -357,6 +378,7 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		studentImpl.setAddress(getAddress());
 		studentImpl.setStd(getStd());
 		studentImpl.setDivison(getDivison());
+		studentImpl.setPhoneNo(getPhoneNo());
 
 		studentImpl.resetOriginalValues();
 
@@ -460,12 +482,14 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 			studentCacheModel.Divison = null;
 		}
 
+		studentCacheModel.PhoneNo = getPhoneNo();
+
 		return studentCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(11);
+		StringBundler sb = new StringBundler(13);
 
 		sb.append("{Id=");
 		sb.append(getId());
@@ -477,6 +501,8 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 		sb.append(getStd());
 		sb.append(", Divison=");
 		sb.append(getDivison());
+		sb.append(", PhoneNo=");
+		sb.append(getPhoneNo());
 		sb.append("}");
 
 		return sb.toString();
@@ -484,7 +510,7 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(19);
+		StringBundler sb = new StringBundler(22);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ecw.student.model.Student");
@@ -510,6 +536,10 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 			"<column><column-name>Divison</column-name><column-value><![CDATA[");
 		sb.append(getDivison());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>PhoneNo</column-name><column-value><![CDATA[");
+		sb.append(getPhoneNo());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -528,6 +558,7 @@ public class StudentModelImpl extends BaseModelImpl<Student>
 	private boolean _setOriginalStd;
 	private String _Divison;
 	private String _originalDivison;
+	private long _PhoneNo;
 	private long _columnBitmask;
 	private Student _escapedModel;
 }

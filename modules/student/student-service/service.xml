@@ -9,6 +9,7 @@
         <column name="Address" type="String"></column>
         <column name="Std" type="int"></column>
         <column name="Divison" type="String"></column>
+        <column name="PhoneNo" type="long"></column>
         <finder name="StdAndDiv" return-type="Collection">
             <finder-column name="Std"></finder-column>
             <finder-column name="Divison"></finder-column>
