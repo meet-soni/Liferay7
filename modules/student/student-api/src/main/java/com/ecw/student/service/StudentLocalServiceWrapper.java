@@ -180,6 +180,12 @@ public class StudentLocalServiceWrapper implements StudentLocalService,
 	}
 
 	@Override
+	public java.util.List<com.ecw.student.model.Student> findByStdAndDiv(
+		int std, String divison) {
+		return _studentLocalService.findByStdAndDiv(std, divison);
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return _studentLocalService.getActionableDynamicQuery();
 	}

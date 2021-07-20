@@ -14,33 +14,26 @@
 
 package com.ecw.student.service.impl;
 
-import java.util.List;
-
-import com.ecw.student.model.Student;
-import com.ecw.student.service.base.StudentLocalServiceBaseImpl;
+import com.ecw.student.service.base.StudentInfoLocalServiceBaseImpl;
 
 /**
- * The implementation of the student local service.
+ * The implementation of the student info local service.
  *
  * <p>
- * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.ecw.student.service.StudentLocalService} interface.
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.ecw.student.service.StudentInfoLocalService} interface.
  *
  * <p>
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
  * @author Brian Wing Shun Chan
- * @see StudentLocalServiceBaseImpl
- * @see com.ecw.student.service.StudentLocalServiceUtil
+ * @see StudentInfoLocalServiceBaseImpl
+ * @see com.ecw.student.service.StudentInfoLocalServiceUtil
  */
-public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
+public class StudentInfoLocalServiceImpl extends StudentInfoLocalServiceBaseImpl {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never reference this class directly. Always use {@link com.ecw.student.service.StudentLocalServiceUtil} to access the student local service.
+	 * Never reference this class directly. Always use {@link com.ecw.student.service.StudentInfoLocalServiceUtil} to access the student info local service.
 	 */
-	
-	public List<Student> findByStdAndDiv(int std, String divison) {
-		return getStudentPersistence().findByStdAndDiv(std, divison);
-	}
 }

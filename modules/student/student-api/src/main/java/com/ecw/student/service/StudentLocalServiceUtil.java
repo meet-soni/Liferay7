@@ -178,6 +178,11 @@ public class StudentLocalServiceUtil {
 		return getService().fetchStudent(Id);
 	}
 
+	public static java.util.List<com.ecw.student.model.Student> findByStdAndDiv(
+		int std, String divison) {
+		return getService().findByStdAndDiv(std, divison);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return getService().getActionableDynamicQuery();
 	}

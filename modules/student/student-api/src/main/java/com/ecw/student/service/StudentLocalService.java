@@ -167,6 +167,8 @@ public interface StudentLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Student fetchStudent(long Id);
 
+	public List<Student> findByStdAndDiv(int std, String divison);
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 

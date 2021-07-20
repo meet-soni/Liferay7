@@ -14,5 +14,12 @@
             <finder-column name="Std"></finder-column>
             <finder-column name="Divison"></finder-column>
         </finder>
+    </entity>
+    <entity name="StudentInfo" local-service="true" table="StudentInfo">
+        <column name="Id" type="long" primary="true"></column>
+        <column name="StudentId" type="long"></column>
+        <column name="FirstName" type="String"></column>
+        <column name="LastName" type="String"></column>
+        <column name="BloodGroup" type="String"></column>
     </entity>	
 </service-builder>

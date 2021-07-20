@@ -1,0 +1,3 @@
+Bundle-Name: user-service-hook
+Bundle-SymbolicName: com.ecw.user.service.hook
+Bundle-Version: 1.0.0

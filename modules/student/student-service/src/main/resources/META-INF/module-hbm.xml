@@ -3,6 +3,7 @@
 
 <hibernate-mapping auto-import="false" default-lazy="false">
 	<import class="com.ecw.student.model.Student" />
+	<import class="com.ecw.student.model.StudentInfo" />
 	<class name="com.ecw.student.model.impl.StudentImpl" table="Student">
 		<id name="Id" type="long">
 			<generator class="assigned" />
@@ -12,5 +13,14 @@
 		<property name="Std" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="Divison" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="PhoneNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ecw.student.model.impl.StudentInfoImpl" table="StudentInfo">
+		<id name="Id" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="StudentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="FirstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BloodGroup" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>

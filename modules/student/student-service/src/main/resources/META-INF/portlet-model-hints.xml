@@ -9,4 +9,11 @@
 		<field name="Divison" type="String" />
 		<field name="PhoneNo" type="long" />
 	</model>
+	<model name="com.ecw.student.model.StudentInfo">
+		<field name="Id" type="long" />
+		<field name="StudentId" type="long" />
+		<field name="FirstName" type="String" />
+		<field name="LastName" type="String" />
+		<field name="BloodGroup" type="String" />
+	</model>
 </model-hints>
