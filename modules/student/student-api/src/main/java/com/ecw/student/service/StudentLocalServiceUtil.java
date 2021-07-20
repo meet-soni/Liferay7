@@ -183,6 +183,11 @@ public class StudentLocalServiceUtil {
 		return getService().findByStdAndDiv(std, divison);
 	}
 
+	public static java.util.List<com.ecw.student.model.Student> findStudentByBloodGroupAndStd(
+		String bloodGroup, int std) {
+		return getService().findStudentByBloodGroupAndStd(bloodGroup, std);
+	}
+
 	public static com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return getService().getActionableDynamicQuery();
 	}

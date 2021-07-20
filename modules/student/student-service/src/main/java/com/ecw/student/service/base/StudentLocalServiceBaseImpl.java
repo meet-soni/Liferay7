@@ -18,6 +18,7 @@ import aQute.bnd.annotation.ProviderType;
 
 import com.ecw.student.model.Student;
 import com.ecw.student.service.StudentLocalService;
+import com.ecw.student.service.persistence.StudentFinder;
 import com.ecw.student.service.persistence.StudentInfoPersistence;
 import com.ecw.student.service.persistence.StudentPersistence;
 
@@ -348,6 +349,24 @@ public abstract class StudentLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the student finder.
+	 *
+	 * @return the student finder
+	 */
+	public StudentFinder getStudentFinder() {
+		return studentFinder;
+	}
+
+	/**
+	 * Sets the student finder.
+	 *
+	 * @param studentFinder the student finder
+	 */
+	public void setStudentFinder(StudentFinder studentFinder) {
+		this.studentFinder = studentFinder;
+	}
+
+	/**
 	 * Returns the student info local service.
 	 *
 	 * @return the student info local service
@@ -554,6 +573,8 @@ public abstract class StudentLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected StudentLocalService studentLocalService;
 	@BeanReference(type = StudentPersistence.class)
 	protected StudentPersistence studentPersistence;
+	@BeanReference(type = StudentFinder.class)
+	protected StudentFinder studentFinder;
 	@BeanReference(type = com.ecw.student.service.StudentInfoLocalService.class)
 	protected com.ecw.student.service.StudentInfoLocalService studentInfoLocalService;
 	@BeanReference(type = StudentInfoPersistence.class)

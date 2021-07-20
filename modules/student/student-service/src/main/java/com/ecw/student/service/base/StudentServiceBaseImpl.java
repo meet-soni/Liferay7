@@ -16,6 +16,7 @@ package com.ecw.student.service.base;
 
 import com.ecw.student.model.Student;
 import com.ecw.student.service.StudentService;
+import com.ecw.student.service.persistence.StudentFinder;
 import com.ecw.student.service.persistence.StudentInfoPersistence;
 import com.ecw.student.service.persistence.StudentPersistence;
 
@@ -107,6 +108,24 @@ public abstract class StudentServiceBaseImpl extends BaseServiceImpl
 	 */
 	public void setStudentPersistence(StudentPersistence studentPersistence) {
 		this.studentPersistence = studentPersistence;
+	}
+
+	/**
+	 * Returns the student finder.
+	 *
+	 * @return the student finder
+	 */
+	public StudentFinder getStudentFinder() {
+		return studentFinder;
+	}
+
+	/**
+	 * Sets the student finder.
+	 *
+	 * @param studentFinder the student finder
+	 */
+	public void setStudentFinder(StudentFinder studentFinder) {
+		this.studentFinder = studentFinder;
 	}
 
 	/**
@@ -371,6 +390,8 @@ public abstract class StudentServiceBaseImpl extends BaseServiceImpl
 	protected StudentService studentService;
 	@BeanReference(type = StudentPersistence.class)
 	protected StudentPersistence studentPersistence;
+	@BeanReference(type = StudentFinder.class)
+	protected StudentFinder studentFinder;
 	@BeanReference(type = com.ecw.student.service.StudentInfoLocalService.class)
 	protected com.ecw.student.service.StudentInfoLocalService studentInfoLocalService;
 	@BeanReference(type = com.ecw.student.service.StudentInfoService.class)

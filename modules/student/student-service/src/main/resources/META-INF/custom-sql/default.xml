@@ -1,0 +1,10 @@
+<custom-sql>
+    <sql id="Student_findStudentByBloodGroupAndStd">
+     <![CDATA[
+     	select student.*
+		inner join studentInfo
+		on student.Id = studentInfo.studentId
+		where student.std = ? and studentInfo.BloodGroup = ?
+     ]]>
+    </sql>
+</custom-sql>

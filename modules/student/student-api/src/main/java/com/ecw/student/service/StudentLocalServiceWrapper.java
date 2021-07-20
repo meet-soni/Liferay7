@@ -186,6 +186,13 @@ public class StudentLocalServiceWrapper implements StudentLocalService,
 	}
 
 	@Override
+	public java.util.List<com.ecw.student.model.Student> findStudentByBloodGroupAndStd(
+		String bloodGroup, int std) {
+		return _studentLocalService.findStudentByBloodGroupAndStd(bloodGroup,
+			std);
+	}
+
+	@Override
 	public com.liferay.portal.kernel.dao.orm.ActionableDynamicQuery getActionableDynamicQuery() {
 		return _studentLocalService.getActionableDynamicQuery();
 	}

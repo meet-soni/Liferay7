@@ -43,4 +43,8 @@ public class StudentLocalServiceImpl extends StudentLocalServiceBaseImpl {
 	public List<Student> findByStdAndDiv(int std, String divison) {
 		return getStudentPersistence().findByStdAndDiv(std, divison);
 	}
+	
+	public List<Student> findStudentByBloodGroupAndStd(String bloodGroup, int std) {
+		return studentFinder.findStudentByBloodGroupAndStd(bloodGroup, std);
+	}
 }

@@ -10,6 +10,7 @@
 	<bean class="com.ecw.student.service.impl.StudentLocalServiceImpl" id="com.ecw.student.service.StudentLocalService" />
 	<bean class="com.ecw.student.service.impl.StudentServiceImpl" id="com.ecw.student.service.StudentService" />
 	<bean class="com.ecw.student.service.persistence.impl.StudentPersistenceImpl" id="com.ecw.student.service.persistence.StudentPersistence" parent="basePersistence" />
+	<bean class="com.ecw.student.service.persistence.impl.StudentFinderImpl" id="com.ecw.student.service.persistence.StudentFinder" parent="basePersistence" />
 	<bean class="com.ecw.student.service.impl.StudentInfoLocalServiceImpl" id="com.ecw.student.service.StudentInfoLocalService" />
 	<bean class="com.ecw.student.service.impl.StudentInfoServiceImpl" id="com.ecw.student.service.StudentInfoService" />
 	<bean class="com.ecw.student.service.persistence.impl.StudentInfoPersistenceImpl" id="com.ecw.student.service.persistence.StudentInfoPersistence" parent="basePersistence" />

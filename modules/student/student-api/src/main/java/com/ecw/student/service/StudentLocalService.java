@@ -169,6 +169,9 @@ public interface StudentLocalService extends BaseLocalService,
 
 	public List<Student> findByStdAndDiv(int std, String divison);
 
+	public List<Student> findStudentByBloodGroupAndStd(String bloodGroup,
+		int std);
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public ActionableDynamicQuery getActionableDynamicQuery();
 
